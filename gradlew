@@ -1,15 +1,35 @@
 #!/usr/bin/env sh
+
 ##############################################################################
 ##
 ##  Gradle start up script for UN*X
 ##
 ##############################################################################
 
-# Set default Gradle user home
-GRADLE_USER_HOME="${GRADLE_USER_HOME:-$HOME/.gradle}"
+# Attempt to set APP_HOME if not set
+if [ -z "$APP_HOME" ]; then
+  APP_HOME=$(cd "$(dirname "$0")"; pwd)
+fi
 
-# Locate gradle wrapper jar
-WRAPPER_JAR="./gradle/wrapper/gradle-wrapper.jar"
+DEFAULT_JVM_OPTS=""
 
-# Execute
-exec java -Dorg.gradle.appname=$(basename "$0") -cp "$WRAPPER_JAR" org.gradle.wrapper.GradleWrapperMain "$@"
+CLASSPATH=$APP_HOME/gradle/wrapper/gradle-wrapper.jar
+
+# Collect user arguments
+ARGS=""
+while [ $# -gt 0 ]; do
+  case "$1" in
+    --*) ARGS="$ARGS $1" ;;
+    *) break ;;
+  esac
+  shift
+done
+
+# Use JAVA_HOME if set
+if [ -n "$JAVA_HOME" ]; then
+  JAVA="$JAVA_HOME/bin/java"
+else
+  JAVA=java
+fi
+
+exec "$JAVA" $DEFAULT_JVM_OPTS -cp "$CLASSPATH" org.gradle.wrapper.GradleWrapperMain "$@"
