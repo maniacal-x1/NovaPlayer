@@ -14,7 +14,8 @@ allprojects {
     repositories {
         google()
         mavenCentral()
-        maven { url 'https://artifacts.videolan.org/maven/' } // added for libvlc-all
+        maven { url 'https://jitpack.io' }
+        maven { url 'https://code.videolan.org/nolze/vlc-android/maven-repo/raw/master/' }
     }
 }
 
