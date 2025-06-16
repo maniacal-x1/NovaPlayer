@@ -4,7 +4,6 @@ buildscript {
     repositories {
         google()
         mavenCentral()
-        jcenter() // Added for compatibility
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:8.1.1'
@@ -15,7 +14,7 @@ allprojects {
     repositories {
         google()
         mavenCentral()
-        jcenter() // Added for compatibility
+        maven { url 'https://artifacts.videolan.org/maven/' } // added for libvlc-all
     }
 }
 
